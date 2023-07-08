@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    {% extends 'one/index.html' %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% block changetitle %}
+        <title>Switch</title>
+        {% endblock %}   
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        {% block changepage %}
+
+        <ul class="gridview">
+            {% for g in games %}
+                {% if g.plataforma == 2 %}
+                <a id="griddir" href="">
+                    <li class="grid_list">
+                        <h1>{{g.nombre}}</h1>
+                        {% if g.plataforma == 0 %}
+                        <p>Playstation</p>
+                        {% elif g.plataforma == 1 %}
+                        <p>Xbox</p>
+                        {% elif g.plataforma == 2 %}
+                        <p>Switch</p>
+                        {% elif g.plataforma == 3 %}
+                        <p>PC</p>
+                        {% endif %}
+                        <p>{{g.precio}}</p>
+                        <img id="img_grid" src="{% static 'one/assets/hollow.jpg' %}"></img>       
+                    </li>
+                </a>
+                {% endif %}
+            {% endfor %}    
+        </ul>
+
+        {% endblock  %}
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>

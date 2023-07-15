@@ -16,19 +16,42 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import path
+from django.contrib.auth.views import LogoutView
 from vistas.views import *
 from login.views import *
 from forms.views import *
+from forms.models import *
+from login.models import *
+
+# admin.site.register(Users)
+admin.site.register(Games)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), 
     path('', home, name='home'),
-    path('login/', login, name='login'),
+    
+    path('login/', login_in, name='login'),
+    path('login/register/', register, name='register'),
+    path('logout/', LogoutView.as_view(template_name= 'one/index.html'), name='logout'),
+    
+    path('perfil/', perfil, name='perfil'),
+    path('perfil/datos/<id_up>', updperfil, name='updperfil'),
+    path('perfil/password/<id_up>', updpass, name='updpass'),
+    path('perfil/avatar/<id_up>', updavatar, name='updavatar'),
+    path('perfil/datos/edicion/<id_up>', useredicion, name='useredicion'),
+    path('perfil/password/edicion/<id_up>', passedicion, name='passedicion'),
+     
     path('ps/',ps, name='ps'),
     path('xbox/',xbox, name='xbox'),
     path('switch/',switch, name='switch'),
     path('pc/',pc, name='pc'),
+    path('about/',about, name='about'),
     
-    path('forms/ps/',psform, name='psform'),
+    path('forms/',form, name='form'),
+    path('forms/pslist/',pslist, name='pslist'),
+    path('forms/delist/<id_del>',delist, name='delist'),
+    path('forms/updform/<id_up>',updform, name='updform'),
+    path('forms/updform/edicion/<id_up>',edicion, name='edicion'),
+    
+    
 ]

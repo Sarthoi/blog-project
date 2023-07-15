@@ -1,0 +1,19 @@
+{% extends 'one/index.html' %}
+{% load static %}
+
+{% block changepage %}
+
+<div>
+    <ul>
+        <li>{{user.username}}</li>
+        {% comment %} <li>{{user.password}}</li> {% endcomment %}
+    </ul>
+
+    <a href="{% url 'updperfil' user.id %}" class="">Editar perfil</a>
+    <a href="{% url 'updpass' user.id %}" class="">Editar contraseña</a>
+    <a href="{% url 'updavatar' user.id %}" class="">Editar avatar</a>
+</div>
+
+{% endblock  %}
+
+

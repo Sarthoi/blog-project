@@ -1,22 +1,42 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+    {% load static %}
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login</title>
+        {% block changetitle %}
+        <title> Inicio de Sesion</title>
+        {% endblock %}   
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{% static 'folders/css/csslogin.css' %}">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        {% block changepage %}
+    <div class="form-main">
+        <form class="formuser" action="" method="POST"> {% csrf_token %}
         
-        <script src="" async defer></script>
+            <h1 id="hform">Iniciar Sesion</h1>
+
+        <div class="form-content">
+            <label id="form-label">Nombre</label>
+            <input id="input-form" name="username" type="text" placeholder="Nombre" required>
+            <label id="form-label">Contraseña</label>
+            <input id="input-form" name="password" type="password" placeholder="Contraseña" required>
+            <button id="btn-reg" name="btn-reg" type="submit" >Ingresar</button>
+            <p>¿No tienes cuenta? Registrate a&nbsp<a href="{% url 'register' %}"> Aqui</a></p>
+        </div>
+
+        {% if err %}
+            <p id="perr">{{err}}</p>
+        {% endif %}
+
+        </form>
+    </div>
+
+
+        {% endblock  %}
+
+            <script src="" async defer></script>
     </body>
 </html>

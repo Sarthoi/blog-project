@@ -1,0 +1,37 @@
+{% extends 'pages/login.html' %}
+{% load static %}
+
+{% block changetitle %}
+    <title> Registro</title>
+{% endblock %}  
+
+{% block changepage %}
+<div class="form-main">
+    <form class="formuser" action="" method="POST"> {% csrf_token %}
+    
+        <h1 id="hform">Registro</h1>
+
+    <div class="form-content">
+        <label id="form-label">Nombre</label>
+        
+        <input id="input-form" name="username" type="text" placeholder="Ingrese nombre" required>
+        <label id="form-label">Ingrese contraseña</label>
+        <input id="input-form" name="password1" type="password" placeholder="Ingrese contraseña" required>
+        <label id="form-label">Repita contraseña</label>
+        <input id="input-form" name="password2" type="password" placeholder="Repita la contraseña" required>
+
+        <button id="btn-reg"  type="submit" >Ingresar</button>
+
+        <p>¿Ya tienes una cuenta? Inicia sesion&nbsp <a href="{% url 'login' %}">Aqui</a></p>
+    </div>
+
+            {% if err %}
+                <div class="pass-err">
+                    <p>Tu contraseña debe contener al menos 8 caracteres.</p>
+                    <p>Tu contraseña no puede ser una contraseña demasiado común.</p>
+                    <p>Tu contraseña no puede ser completamente numérica.</p>
+                </div>
+            {% endif %}
+    </form>
+</div>
+{% endblock  %}

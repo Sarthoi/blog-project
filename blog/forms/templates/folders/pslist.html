@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'one/index.html' %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% block changetitle %}
+        <title> Juegos PS</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href=" {% static 'folders/scss/stylef.scss' %} ">
+        {% endblock %}   
+    </head>
+    <body>
+        {% block changepage %}
+
+
+        <button id="liscre"><a href="{% url 'form' %}">Registrar</a></button>
+
+    </div class="tmain">
+        <table class="tlist">
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Plataforma</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+            </tr>
+
+        {% for g in games %}
+            <tr>
+                <td></td>
+                <td>{{g.nombre}}</td>
+                <td>$ {{g.precio}} CLP</td>
+
+                {% if g.plataforma == 0 %}
+                <td>Playstation</td>
+                {% elif g.plataforma == 1  %}
+                <td>Xbox</td>
+                {% elif g.plataforma == 2  %}
+                <td>Switch</td>
+                {% elif g.plataforma == 3  %}
+                <td>PC</td>
+                {% endif %}
+
+                <td><button id="lisdel"><a href="{% url 'delist' g.id %}">Borrar</a></button></td>
+                <td><button id="lisup"><a href="{% url 'updform' g.id%}">Update</a></button></td>
+
+            </tr>
+        {% endfor %}   
+        </table>
+    </div>
+
+        {% endblock  %}
+    
+            <script src="" async defer></script>
+    </body>
+</html>

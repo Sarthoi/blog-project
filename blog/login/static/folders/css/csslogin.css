@@ -1,0 +1,118 @@
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html {
+    background: url(../assets/mario.jpg) no-repeat;
+    background-size: auto;
+}
+
+body {
+    color: #fff;
+}
+
+.form-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.formuser {
+    width: 300px;
+    margin-top: 5%;
+    height: auto;
+    background: linear-gradient(#ff9c0783 ,#021ba781 80%);
+    padding: 50px 50px 20px 50px;
+    border: 1px solid #000;
+    border-radius: 25px;
+}
+
+.form-content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+
+.form-content p {
+    display: flex;
+    margin: 20px 0 0;
+    font-size: 15px;
+    justify-content: center;
+}
+
+.form-content a {
+    color: #fff;
+    font-weight: 800;
+}
+
+.form-content a:hover{
+border-bottom:1px solid #fff;
+}
+
+#form-label {
+    font-size:20px ;
+    padding: 10px 2px;
+    margin-top: 20px;
+}
+
+#input-form {
+    background: #00000000;
+    color: #fff;
+    padding: 5px 2px;
+    font-size: 18px;
+    outline: none;
+    border: 0;
+    border-bottom: #000 1px solid;
+}
+
+#input-form::placeholder {
+    color: #fff;
+    font-size: 15px;
+}
+
+#btn-reg {
+    display: flex;
+    background: linear-gradient(#3661fc, #144afc);
+    width: 50%;
+    height: auto;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    margin: 35px 70px 0;
+    justify-content: center;
+    border: 1px solid #1b4bfc;
+    border-radius: 15px;
+}
+
+#btn-reg:hover {
+    transition: 0.2s;
+    background: radial-gradient(#2354f7 40%, #6284f3);
+    border: 1px outset #1b4bfc;
+}
+
+#perr{
+    display: flex;
+    /* right: 80%; */
+    margin: 10px 0;
+    padding: 5px;
+    background: #ff000080;
+}
+
+.pass-err{
+    display: flex;
+    flex-direction: column;
+    background: #e71010d3;
+    text-align: left;
+    margin-top: 15px;
+    padding: 10px;
+    border: #9b0e0e 1px solid;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    gap: 5px;
+}

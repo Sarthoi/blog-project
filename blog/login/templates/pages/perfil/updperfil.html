@@ -1,0 +1,29 @@
+{% extends 'one/index.html' %}
+{% load static %}
+
+{% block changepage %}
+
+
+<form class="formreg" action="/perfil/datos/edicion/{{user.id}}" method="POST"> {% csrf_token %}
+
+    <h1 id="hform">Editar perfil</h1>
+
+    <label id="form-label">Nombre de usuario</label>
+    <input id="input-form" name="username" type="text" placeholder="Nombre de usuario" value="{{user.username}}" required>
+    <label id="form-label">Nombre</label>
+    <input id="input-form" name="first_name" type="text" placeholder="Nombre" value="{{user.first_name}}" required>
+    <label id="form-label">Apellido</label>
+    <input id="input-form" name="last_name" type="text" placeholder="Apellido" value="{{user.last_name}}" required>
+    <label id="form-label">Correo</label>
+    <input id="input-form" name="email" type="text" placeholder="Correo" value="{{user.email}}" required>
+    {% comment %} <label id="form-label">Stock</label>
+    <input id="input-form" name="stock" type="number" placeholder="Stock" value="" required> {% endcomment %}
+
+    <button id="btn-reg" name="btn-reg" type="submit" >Actualizar</button>
+
+    {% comment %} password= forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'contraseña'})) {% endcomment %}
+</form>
+
+
+{% endblock  %}
+

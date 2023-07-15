@@ -6,6 +6,9 @@ from forms.models import *
 def home(request):
     return render(request, 'one/index.html')
 
+def about(request):
+    return render(request, 'one/about.html')
+
 def ps(request):
     games= Games.objects.all()
     return render(request, 'one/playstation.html', {"games": games})
@@ -21,5 +24,7 @@ def switch(request):
 def pc(request):
     games= Games.objects.all()
     return render(request, 'one/pc.html' , {"games": games})
+
+
 
     

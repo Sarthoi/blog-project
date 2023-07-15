@@ -15,20 +15,20 @@
     <body>
         {% block changepage %}
 
-        <form action="/forms/ps/" method="POST"> {% csrf_token %}
+        <form class="formreg" action="/forms/" method="POST"> {% csrf_token %}
 
-            <h1>Formulario de registro</h1>
+            <h1 id="hform">Formulario de registro</h1>
 
-            <label>Nombre</label>
+            <label id="form-label">Nombre</label>
             <input id="input-form" name="nombre" type="text" placeholder="Nombre" required>
-            <label>Precio</label>
+            <label id="form-label">Precio</label>
             <input id="input-form" name="precio" type="number" placeholder="Precio" required>
-            <label>Descripcion</label>
-            <input id="input-form" name="descripcion" type="text" placeholder="Descripcion" required>
-            <label>Stock</label>
+            <label id="form-label">Descripcion</label>
+            <input id="input-form-d" name="descripcion" type="text" placeholder="Descripcion" required>
+            <label id="form-label">Stock</label>
             <input id="input-form" name="stock" type="number" placeholder="Stock" required>
 
-            <label>Plataforma</label>
+            <label id="form-label">Plataforma</label>
             <select name="plataforma" id="sel-reg">
                 <option value="0" selected>PlayStation</option>
                 <option value="1">Xbox</option>

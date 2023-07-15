@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'one/index.html' %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% block changetitle %}
+        <title> Formulario de edicion</title>
+        {% endblock %}   
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block changepage %}
+
+        <form class="formreg" action="/forms/updform/edicion/{{games.id}}" method="POST"> {% csrf_token %}
+
+            <h1 id="hform">Edicion de registro</h1>
+                {% comment %} <input type="hidden" value="{{games.id}}"></input> {% endcomment %}
+            <label id="form-label">Nombre</label>
+            <input id="input-form" name="nombre" type="text" placeholder="Nombre" value="{{games.nombre}}" required>
+            <label id="form-label">Precio</label>
+            <input id="input-form" name="precio" type="number" placeholder="Precio" value="{{games.precio}}" required>
+            <label id="form-label">Descripcion</label>
+            <input id="input-form-d" name="descripcion" type="text" placeholder="Descripcion" value="{{games.descripcion}}" required>
+            <label id="form-label">Stock</label>
+            <input id="input-form" name="stock" type="number" placeholder="Stock" value="{{games.stock}}" required>
+
+            <label id="form-label">Plataforma</label>
+            <select name="plataforma" id="sel-reg">
+                <option value="0" {% if games.plataforma == 0 %}selected{% endif %}>PlayStation</option>
+                <option value="1" {% if games.plataforma == 1 %}selected{% endif %}>Xbox</option>
+                <option value="2" {% if games.plataforma == 2 %}selected{% endif %}>Switch</option>
+                <option value="3" {% if games.plataforma == 3 %}selected{% endif %}>PC</option>
+               
+            </select>
+
+            <button id="btn-reg" name="btn-reg" type="submit" >Registrar</button>
+        
+        </form>
+
+        {% endblock  %}
+
+            <script src="" async defer></script>
+    </body>
+</html>

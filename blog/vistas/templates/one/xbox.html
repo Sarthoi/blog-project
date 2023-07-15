@@ -19,12 +19,14 @@
     <body>
         {% block changepage %}
 
-        <ul class="gridview">
+        <div class="gridview">
             {% for g in games %}
                 {% if g.plataforma == 1 %}
-                <a id="griddir" href="">
-                    <li class="grid_list">
-                        <h1>{{g.nombre}}</h1>
+            <div class="grid_list">
+                <a id="griddir" href="">         
+                        <h2>{{g.nombre}}</h2>
+                    <div class="grid_list_2">
+                        <div class="grid_p">
                         {% if g.plataforma == 0 %}
                         <p>Playstation</p>
                         {% elif g.plataforma == 1 %}
@@ -34,13 +36,15 @@
                         {% elif g.plataforma == 3 %}
                         <p>PC</p>
                         {% endif %}
-                        <p>{{g.precio}}</p>
+                        <p>$ {{g.precio}} CLP</p>
+                        </div>
                         <img id="img_grid" src="{% static 'one/assets/hollow.jpg' %}"></img>       
-                    </li>
+                    </div>
                 </a>
+            </div>
                 {% endif %}
             {% endfor %}    
-        </ul> 
+        </div>
 
         {% endblock  %}
 

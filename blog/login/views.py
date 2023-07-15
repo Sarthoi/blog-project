@@ -3,6 +3,8 @@ from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from login.forms import *
+from login.models import *
 
 # Create your views here.
 
@@ -84,3 +86,25 @@ def passedicion(request, id_up):
                 return redirect('perfil')
             
     return redirect('perfil')
+
+def updavatar(request):
+    form= Avatar(request.POST, request.FILES)
+    print(form)
+    print(form.is_valid())
+    if form.is_valid():
+        user= User.objects.get(username= request.user)
+        avatar=AvatarModel(user=user, image=form.cleaned_data['avatar'], id= request.user.id)
+        avatar.save()
+        avatar= AvatarModel.objects.filter(user= request.user.id)
+        try:
+            avatar=avatar[0].image.url
+        except:
+            avatar= None
+        return render(request,'one/index.html',{'avatar':avatar})
+    else:
+        try:
+            avatar =Avatar.objects.filter(user= request.user.id)
+            form=Avatar()
+        except:
+            form=Avatar()
+    return render(request,'pages/perfil/avatar.html',{'form':form})

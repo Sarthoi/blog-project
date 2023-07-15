@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
 from vistas.views import *
 from login.views import *
 from forms.views import *
@@ -51,7 +53,7 @@ urlpatterns = [
     path('forms/pslist/',pslist, name='pslist'),
     path('forms/delist/<id_del>',delist, name='delist'),
     path('forms/updform/<id_up>',updform, name='updform'),
-    path('forms/updform/edicion/<id_up>',edicion, name='edicion'),
-    
-    
+    path('forms/updform/edicion/<id_up>',edicion, name='edicion'), 
 ]
+
+urlpatterns+= static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

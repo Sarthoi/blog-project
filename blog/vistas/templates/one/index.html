@@ -28,6 +28,7 @@
         {% if user.id != None %}
         <a class="navbar-brand" href="{% url 'logout' %}">Logout</a>
         <a class="navbar-brand" href="{% url 'perfil' %}">{{user.username}}</a>
+        <a class="navbar-brand" href="">{{avatar}}</a>
           {% if perms.forms.can_delete %}
           <a class="navbar-brand" href="{% url 'pslist' %}">Listar</a>
           {% endif %}

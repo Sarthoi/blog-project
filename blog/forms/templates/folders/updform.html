@@ -24,7 +24,7 @@
             <label id="form-label">Precio</label>
             <input id="input-form" name="precio" type="number" placeholder="Precio" value="{{games.precio}}" required>
             <label id="form-label">Descripcion</label>
-            <input id="input-form-d" name="descripcion" type="text" placeholder="Descripcion" value="{{games.descripcion}}" required>
+            <textarea id="input-form-d" name="descripcion" type="text" placeholder="Descripcion" required>{{games.descripcion}}</textarea>
             <label id="form-label">Stock</label>
             <input id="input-form" name="stock" type="number" placeholder="Stock" value="{{games.stock}}" required>
 
@@ -37,11 +37,12 @@
                
             </select>
 
-            <button id="btn-reg" name="btn-reg" type="submit" >Registrar</button>
-
             <label id="form-label">Imagen</label>
-            <input id="input-form" name="imagen" type="file" value="{{games.imagen}}" required>
+            <img src="{{ games.imagen.url }}" style="max-width: 300px;">
+            <input id="input-form" name="imagen" type="file">
         
+            <button id="btn-reg" name="btn-reg" type="submit" >Actualizar</button>
+
         </form>
 
         {% endblock  %}

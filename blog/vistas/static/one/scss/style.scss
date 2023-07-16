@@ -112,7 +112,7 @@ width: 40px;
 }
 
 .grid_list {
-    background:linear-gradient(#f8f8f8 80%, #b1b1b1);
+    background:linear-gradient(#cce9b5 80%, #a0a5be);
     width: 22pc !important;
     height: 19pc !important;
     padding: auto !important;
@@ -158,8 +158,10 @@ width: 40px;
 }
 
 #img_grid {
-    width: 55%;
+    width: 60%;
+    height: 220px;
     border: 1px solid #000 !important;  
+    -webkit-box-shadow: 1px 1px 20px 0px;
 }
 
 // ----------------------------------------------------------------
@@ -237,7 +239,7 @@ width: 40px;
 //------------------------------------------------------------------
 
 .formreg{
-  background: #20b4277e;  
+  background: #2036b47e;  
   display: grid;
   width: 30pc;
   height: auto;
@@ -264,6 +266,7 @@ width: 40px;
 #input-form{
     width: 88%;
     margin: 10px 0 0 5%;
+    outline: none;
     padding: 5px;
 }
 
@@ -272,7 +275,7 @@ width: 40px;
     width: 88%;
     margin: 10px 0 0 5%;
     padding: 5px 0 70px 5px;
-
+    outline: none;
 }
 
 #sel-reg{
@@ -285,8 +288,9 @@ width: 40px;
     width: 28%;
     margin: 5% 0 0 35%;
     padding: 5px;
+    color: #fff;
     font-size: 25px;
-    background: #00ad26;
+    background: #0037ad;
     border: #000 1px solid;
     border-radius: 10px ;
 }

@@ -103,7 +103,7 @@ button {
 }
 
 .grid_list {
-  background: linear-gradient(#f8f8f8 80%, #b1b1b1);
+  background: linear-gradient(#cce9b5 80%, #a0a5be);
   width: 22pc !important;
   height: 19pc !important;
   padding: auto !important;
@@ -146,8 +146,10 @@ button {
 }
 
 #img_grid {
-  width: 55%;
+  width: 60%;
+  height: 220px;
   border: 1px solid #000 !important;
+  -webkit-box-shadow: 1px 1px 20px 0px;
 }
 
 #liscre {
@@ -220,7 +222,7 @@ button {
 }
 
 .formreg {
-  background: rgba(32, 180, 39, 0.4941176471);
+  background: rgba(32, 54, 180, 0.4941176471);
   display: grid;
   width: 30pc;
   height: auto;
@@ -247,6 +249,7 @@ button {
 #input-form {
   width: 88%;
   margin: 10px 0 0 5%;
+  outline: none;
   padding: 5px;
 }
 
@@ -255,6 +258,7 @@ button {
   width: 88%;
   margin: 10px 0 0 5%;
   padding: 5px 0 70px 5px;
+  outline: none;
 }
 
 #sel-reg {
@@ -267,8 +271,9 @@ button {
   width: 28%;
   margin: 5% 0 0 35%;
   padding: 5px;
+  color: #fff;
   font-size: 25px;
-  background: #00ad26;
+  background: #0037ad;
   border: #000 1px solid;
   border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

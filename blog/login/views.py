@@ -39,21 +39,33 @@ def register(request):
 
 @login_required
 def perfil(request):
-    return render(request, 'pages/perfil/perfil.html')
+    avatar = getavatar(request)
+    return render(request, 'pages/perfil/perfil.html',{'avatar': avatar})
 
 
 @login_required
 def updperfil(request, id_up):
+    avatar = getavatar(request)
     user = User.objects.get(pk=id_up)
-    data = {"user": user}
+    data = {"user": user,"avatar": avatar}  
     return render(request, 'pages/perfil/updperfil.html', data)
 
 
 @login_required
-def updpass(request, id_up):
-    user = User.objects.get(pk=id_up)
-    data = {"user": user}
-    return render(request, 'pages/perfil/updpass.html', data)
+def updpass(request):
+    usuario = request.user    
+    avatar = getavatar(request)
+    if request.method == "POST":
+        form = ChangePasswordForm(data = request.POST, user = usuario)
+        if form.is_valid():
+            if request.POST['new_password1'] == request.POST['new_password2']:
+                user = form.save()
+                update_session_auth_hash(request, user)
+                return redirect( 'perfil')
+        return render(request,'pages/perfil/updpass.html', {"form": form ,"avatar": avatar})
+    else:
+        form = ChangePasswordForm(user = usuario)
+        return render(request, 'pages/perfil/updpass.html', {"form": form ,"avatar": avatar})
 
 
 @login_required
@@ -76,23 +88,6 @@ def useredicion(request, id_up):
 
 
 @login_required
-def passedicion(request, id_up):
-    if request.method == "POST":
-        old_password = request.POST["password"]
-        user = User.objects.get(pk=id_up)
-        if user.password == old_password:
-            new_password1 = request.POST["password1"]
-            new_password2 = request.POST["password2"]
-
-            if new_password1 == new_password2:
-                user = User.objects.get(pk=id_up)
-                user.password = new_password1
-                user.save()
-                return redirect('perfil')
-
-    return redirect('perfil')
-
-@login_required
 def updavatar(request):
     if request.method == 'POST':
         form = AvatarForm(request.POST, request.FILES)
@@ -110,9 +105,11 @@ def updavatar(request):
         try:
             avatar = AvatarModel.objects.filter(user=request.user.id)
             form = AvatarForm()
+            avatar = getavatar(request)
         except:
+            avatar = getavatar(request)
             form = AvatarForm()
-    return render(request, 'pages/perfil/avatar.html', {'form': form})
+    return render(request, 'pages/perfil/avatar.html', {'form': form, 'avatar': avatar})
 
 @login_required
 def getavatar(request):

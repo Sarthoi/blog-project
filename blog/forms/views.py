@@ -58,7 +58,7 @@ def edicion(request, id_up):
             precio=request.POST["precio"]
             stock=request.POST["stock"]
             plataforma=request.POST["plataforma"]
-            imagen=request.POST["imagen"]
+            imagen=request.FILES.get("imagen")
                             
             gamebd = Games.objects.get(id=id_up)
             gamebd.nombre = nombre

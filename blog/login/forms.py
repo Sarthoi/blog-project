@@ -21,7 +21,7 @@ class ChangePasswordForm(PasswordChangeForm):
     
     class Meta:
         model= User
-        fields=['old_password', 'new_password1', 'new_password']
+        fields=['old_password', 'new_password1', 'new_password2']
         help_texts={k:'' for k in fields}
 
 class AvatarForm(forms.Form):

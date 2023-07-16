@@ -65,7 +65,6 @@ def useredicion(request, id_up):
             user.last_name = last_name
             user.email = email
             
-            # user.password = password
             user.save()
             return redirect('perfil')
     return redirect('perfil')

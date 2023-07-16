@@ -1,29 +1,36 @@
 from django.shortcuts import render
 from forms.models import *
+from login.views import getavatar
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'one/index.html')
+    avatar = getavatar(request)
+    return render(request, 'one/index.html' ,{'avatar': avatar})
 
 def about(request):
-    return render(request, 'one/about.html')
+    avatar = getavatar(request)
+    return render(request, 'one/about.html',{'avatar': avatar})
 
 def ps(request):
     games= Games.objects.all()
-    return render(request, 'one/playstation.html', {"games": games})
+    avatar = getavatar(request)
+    return render(request, 'one/playstation.html', {"games": games, 'avatar': avatar})
 
 def xbox(request):
     games= Games.objects.all()
-    return render(request, 'one/xbox.html' , {"games": games})
+    avatar = getavatar(request)
+    return render(request, 'one/xbox.html' , {"games": games, 'avatar': avatar})
 
 def switch(request):
     games= Games.objects.all()
-    return render(request, 'one/switch.html' , {"games": games})
+    avatar = getavatar(request)
+    return render(request, 'one/switch.html' , {"games": games, 'avatar': avatar})
 
 def pc(request):
     games= Games.objects.all()
-    return render(request, 'one/pc.html' , {"games": games})
+    avatar = getavatar(request)
+    return render(request, 'one/pc.html' , {"games": games, 'avatar': avatar})
 
 
 

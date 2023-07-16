@@ -39,7 +39,7 @@ urlpatterns = [
     path('perfil/', perfil, name='perfil'),
     path('perfil/datos/<id_up>', updperfil, name='updperfil'),
     path('perfil/password/<id_up>', updpass, name='updpass'),
-    path('perfil/avatar/<id_up>', updavatar, name='updavatar'),
+    path('perfil/avatar/', updavatar, name='updavatar'),
     path('perfil/datos/edicion/<id_up>', useredicion, name='useredicion'),
     path('perfil/password/edicion/<id_up>', passedicion, name='passedicion'),
      

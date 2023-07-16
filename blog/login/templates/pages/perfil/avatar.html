@@ -1,12 +1,18 @@
 {% extends 'one/index.html' %}
 {% load static %}
 
-<form class="formreg" action="/perfil/avatar/{{user.id}}" method="POST" enctye="multipart/form-data"> {% csrf_token %}
+{% block changepage %}
 
-    <h1 id="hform">Editar Avatar</h1>
-    <label id="form-label">Nombre de usuario</label>
-    <input id="input-form" name="username" type="text" placeholder="Nombre de usuario" value="{{user.username}}" required>
-    
-    <button id="btn-reg" name="btn-reg" type="submit" >Actualizar</button>
+<form class="formreg" method="POST" enctype="multipart/form-data"> {% csrf_token %}
 
+    <h4>{{user.username}}</h4>
+
+    <table>
+        {{form.as_p}}
+    </table>
+    <button id="btn-reg" type="submit" value="aceptar">Actualizar</button>
 </form>
+
+{% endblock  %}
+
+{% comment %} action="/perfil/avatar/{{user.id}}" {% endcomment %}

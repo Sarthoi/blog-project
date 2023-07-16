@@ -15,7 +15,7 @@
     <body>
         {% block changepage %}
 
-        <form class="formreg" action="/forms/" method="POST"> {% csrf_token %}
+        <form class="formreg" action="/forms/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
 
             <h1 id="hform">Formulario de registro</h1>
 
@@ -35,6 +35,9 @@
                 <option value="2">Switch</option>
                 <option value="3">PC</option>
             </select>
+            
+            <label id="form-label">Imagen</label>
+            <input id="input-form" name="imagen" type="file" required>
 
             <button id="btn-reg" name="btn-reg" type="submit" >Registrar</button>
         

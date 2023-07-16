@@ -37,8 +37,17 @@
                         <p>PC</p>
                         {% endif %}
                         <p>$ {{g.precio}} CLP</p>
-                        </div>
-                        <img id="img_grid" src="{% static 'one/assets/hollow.jpg' %}"></img>       
+                        {% if g.stock > 0 %}
+                        <p style="color: #1dd117;">Disponible</p>
+                        {% else %}
+                        <p style="color: #ec1f1f;"> No Disponible</p>
+                        {% endif %}
+                    </div>
+                        {% if g.imagen %}
+                            <img id="img_grid" src="{{ g.imagen.url }}" alt="{{ g.nombre }}">
+                        {% else %}
+                            <p>No hay imagen disponible.</p>
+                        {% endif %}
                     </div>
                 </a>
             </div>

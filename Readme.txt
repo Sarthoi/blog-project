@@ -22,7 +22,7 @@ Contraseña: Djangoform                  (la primera letra debe ser mayúscula)
 Pruebas unitarias: python manage test forms
 
 
-Url del video Explicativo:
+Url del video Explicativo: https://youtu.be/iAK-x_r6oIk
 
 
 Autor: Sadrac Araneda Isla

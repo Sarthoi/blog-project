@@ -119,3 +119,5 @@ def getavatar(request):
     except:
         avatar = None
     return avatar
+
+

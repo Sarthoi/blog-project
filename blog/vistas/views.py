@@ -32,6 +32,12 @@ def pc(request):
     avatar = getavatar(request)
     return render(request, 'one/pc.html' , {"games": games, 'avatar': avatar})
 
+def contenido(request, id_up):
+    g = Games.objects.get(pk=id_up)
+    avatar = getavatar(request)
+    data= {"g": g, 'avatar': avatar}
+    return render(request, 'one/contenido.html', data)
+
 
 
     

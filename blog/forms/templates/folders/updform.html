@@ -38,7 +38,9 @@
             </select>
 
             <label id="form-label">Imagen</label>
-            <img src="{{ games.imagen.url }}" style="max-width: 300px;">
+            {% if games.imagen.url != none %}
+                <img src="{{ games.imagen.url }}" style="max-width: 300px;">
+            {% endif %}
             <input id="input-form" name="imagen" type="file">
         
             <button id="btn-reg" name="btn-reg" type="submit" >Actualizar</button>

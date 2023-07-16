@@ -6,14 +6,9 @@
     margin: 0;
 }
 
-// html{
-//     background-image: url(../assets/mario.jpg);
-//     background-size: cover;
-// }
-
 body {
     background-image: url(../assets/mario.jpg)  !important;
-    background-size: cover !important;
+    background-size: auto !important;
     background-repeat: no-repeat !important;
 }
 
@@ -96,6 +91,58 @@ width: 40px;
 
 //--------------------------------------------------------------------
 
+.contentmain {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 5% 15%;
+    height: 38pc;
+    background: #e2e2e2;
+    border: #0037ad 2px solid;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 20px 0px;
+}
+
+.contentview{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.contentview img{
+    width: 300px;
+    margin: 30px 40px 0;
+    height: 350px;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 10px 0px;
+}
+
+.contentview p{
+    width: 200px;
+    font-size: 18px;
+    margin-left: 50px; 
+}
+
+.contentp{
+    font-size: 18px;
+    padding: 55px 0;
+    margin-top: 15px;
+    word-spacing: 3px;
+}
+
+#cartbtn{
+    width: 38% ;
+    margin: 35%;
+    padding: 10px;
+    color: #fff;
+    font-size: 22px;
+    background: #2969f1;
+    border: #000 1px solid;
+    border-radius: 10px ;
+}
+
+//--------------------------------------------------------------------
+
 .gridview {
     display: flex;
     gap: 15px 3.5pc;
@@ -161,6 +208,7 @@ width: 40px;
     width: 60%;
     height: 220px;
     border: 1px solid #000 !important;  
+    border-radius: 10px;
     -webkit-box-shadow: 1px 1px 20px 0px;
 }
 

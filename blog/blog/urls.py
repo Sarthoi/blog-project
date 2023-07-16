@@ -47,6 +47,7 @@ urlpatterns = [
     path('switch/',switch, name='switch'),
     path('pc/',pc, name='pc'),
     path('about/',about, name='about'),
+    path('contenido/<int:id_up>/',contenido, name='contenido'),
     
     path('forms/',form, name='form'),
     path('forms/pslist/',pslist, name='pslist'),

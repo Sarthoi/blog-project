@@ -19,7 +19,7 @@
             {% for g in games %}
                 {% if g.plataforma == 0 %}
             <div class="grid_list">
-                <a id="griddir" href="">         
+                <a id="griddir" href="{% url 'contenido' g.id %}">         
                         <h2>{{g.nombre}}</h2>
                     <div class="grid_list_2">
                         <div class="grid_p">

@@ -1,0 +1,39 @@
+{% extends 'one/index.html' %}
+{% load static %}
+
+{% block changepage %}
+
+<div class="contentmain">
+    <div class="contentview">
+        <img src="{{g.imagen.url}}">
+
+        {% if g.plataforma == 0 %}
+        <p>Plataforma: Playstation</p>
+        {% elif g.plataforma == 1 %}
+        <p>Plataforma: Xbox</p>
+        {% elif g.plataforma == 2 %}
+        <p>Plataforma: Switch</p>
+        {% elif g.plataforma == 3 %}
+        <p>Plataforma: PC</p>
+        {% endif %}
+
+        {% if g.stock > 0 %}
+        <p style="color: #1dd117;">Stock: Disponible</p>
+        {% else %}
+        <p style="color: #ec1f1f;">Stock: No Disponible</p>
+        {% endif %}
+
+        <p>Precio: {{g.precio}} CLP</p>
+
+    </div>
+    <div class="contentp">
+        <h3>Sinopsis</h3>
+        <p>{{g.descripcion}}</p>
+        <a id="cartbtn" href="">Agregar Al carrito</a>
+    </div>
+
+    
+            
+</div>
+
+{% endblock  %}
